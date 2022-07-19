@@ -113,7 +113,8 @@
           <h3>Formularz kontaktowy</h3>
         </div>
         <div class="contact-form-input">
-          <form id="contact-form" action="{{ .Site.Params.formspreeURL }}" method="POST">
+          <!-- action="{{ .Site.Params.formspreeURL }}" -->
+          <form id="contact-form"  method="POST" data-netlify="true">
 
             <div class="form-row">
 
