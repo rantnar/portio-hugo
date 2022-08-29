@@ -42,7 +42,7 @@
         <h3 class="breadCrumb__title text-capitalize">{{ .Title }}</h3>
         <nav aria-label="breadcrumb" class="d-flex justify-content-center">
           <ol class="breadcrumb align-items-center">
-            <li>Showing all posts with the category "{{.Title}}"</li>
+            <li>Pokazuję wszystkie posty z kategorią: "{{.Title}}"</li>
           </ol>
         </nav>
       </div>
@@ -61,7 +61,7 @@
           </div>
           <div class="blog-page__item-content bg-white">
             <span class="small"
-              >{{ .PublishDate.Format "January 2, 2006" }}</span
+              >{{ .PublishDate.Format "02-01-2006" }}</span
             >
             <h5 class="mb-0">
               <a class="text-dark" href="{{ .Permalink }}">{{ .Title }}</a>
