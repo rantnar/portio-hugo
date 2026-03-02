@@ -47,3 +47,28 @@ VERSION:	1.0.0
 @import "components/contact";
 
 @import "components/case_details";
+
+// Przełącznik tekstu dla przycisków rozwijających zawartość
+.read-more-toggle[aria-expanded="true"] {
+    .more-text {
+        display: none !important;
+    }
+
+    .less-text {
+        display: block !important;
+    }
+}
+
+// Zwiększenie płynności rozwijania i usuwanie przeskakiwania marginesów na końcu animacji
+.collapsing {
+    transition: height 0.5s ease-in-out !important;
+}
+
+.collapse {
+
+    >p:last-child,
+    >ul:last-child,
+    >ol:last-child {
+        margin-bottom: 0 !important;
+    }
+}

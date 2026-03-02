@@ -39,7 +39,7 @@
             <div class="col-12">
                 <div class="service__slider">
                     {{ $Section := .service }}
-                    {{ range $Section }}
+                    {{ range $index, $element := $Section }}
                     <div class="service__slider_item">
                         <div class="service__slider_item-icon">
                             <div class="icon-background">
@@ -51,11 +51,22 @@
                                 </svg>
                             </div>
                             <div class="icon">
-                                <img src=" {{ .image | absURL }} " alt="ui-ux">
+                                <img src=" {{ .image | absURL }} " alt="icon">
                             </div>
                         </div>
                         <div class="mt-5">
                             {{ .content | markdownify }}
+                            {{ if .contentMore }}
+                            <div class="collapse" id="collapseService{{ $index }}">
+                                {{ .contentMore | markdownify }}
+                            </div>
+                            <button class="btn btn-link p-0 mt-3 d-block read-more-toggle" type="button"
+                                data-toggle="collapse" data-target="#collapseService{{ $index }}" aria-expanded="false"
+                                aria-controls="collapseService{{ $index }}">
+                                <span class="more-text">Czytaj więcej</span>
+                                <span class="less-text d-none">Zwiń</span>
+                            </button>
+                            {{ end }}
                         </div>
                     </div>
                     {{ end }}
